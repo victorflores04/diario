@@ -1,25 +1,32 @@
-import React from 'react'
+import React from 'react';
+import moment from 'moment';
 
-export const JornualEntry = () => {
+export const JornualEntry = ({id,date,title,body,url}) => {
+
+    const noDate= moment(date);
+
     return (
         <div className="jornual__entry pointer">
-            <div className="jornual__entry-picture" style={{
+            
+           { 
+            url &&
+           <div className="jornual__entry-picture" style={{
                 backgroundSize:'cover',
-                backgroundImage: 'url(https://assets.leevalley.com/Size5/10061/49L0795-everyman-s-journal-u-02-r.jpg)'
-            }}>
+                backgroundImage:` url(${url})`
+            }}></div>
+            }
 
-            </div>
             <div className="jornual__entry-body">
                 <p className="jornual__entry-title">
-                    un nuevo dia
+                   {title}
                 </p>
                 <p className="jornual__entry-content">
-                    asdfasf fdsafasd fas df sad fasdfasdfs adfsdfafsdf asd fsafdsafasdfsa dfsfsad fsafa sd
+                    {body}
                 </p>
             </div>
             <div className="jornual__entry-date-box">
-                <span>monday</span>
-                <h4> 19</h4>
+                <span>{noDate.format('dddd')}</span>
+                <h4>{noDate.format('Do')}</h4>
             </div>
         </div>
     )

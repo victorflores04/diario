@@ -33,7 +33,7 @@ export const activeNote= (id,note)=>({
 
 export const starLoadingNotes=(uid)=>{
     return async(dispatch)=>{
-        const notes=  await loadNotes(user.uid);
+        const notes=  await loadNotes(uid);
         dispatch(setNotes(notes));
     }
 }
