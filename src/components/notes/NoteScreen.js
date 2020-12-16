@@ -32,7 +32,7 @@ export const NoteScreen = () => {
                 {
                     (note.url) &&
                     (<div className="notes__image">
-                        <img src="https://www.colcaperu.gob.pe/wp-content/uploads/2017/09/Recortado-ca%C3%B1%C3%B3n.jpg" alt="description"  />
+                        <img src={note.url} alt="description"  />
                     </div>)
                 }
             </div>
