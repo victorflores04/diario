@@ -42,3 +42,18 @@ export const setNotes= (notes)=>({
     type: types.notesLoad,
     payload: notes
 });
+
+export const startSaveNote= (note)=>{
+    return async(dispatch,getState)=>{
+
+        const uid= getState().auth.uid
+
+        if (!note.url) {
+            delete note.url;
+        }
+        const noteToFirestone = {...note};
+        delete noteToFirestone.id;
+
+        await db.doc(`${uid}/jornual/notes/${note.id}`).update(noteToFirestone);
+    }
+}
