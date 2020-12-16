@@ -1,4 +1,5 @@
 import { db } from "../firebase/firebase-congif";
+import { loadNotes } from "../helpers/loadNotes";
 import { types } from "../types/types";
 
 
@@ -29,6 +30,13 @@ export const activeNote= (id,note)=>({
     }
 
 });
+
+export const starLoadingNotes=(uid)=>{
+    return async(dispatch)=>{
+        const notes=  await loadNotes(user.uid);
+        dispatch(setNotes(notes));
+    }
+}
 
 export const setNotes= (notes)=>({
     type: types.notesLoad,
