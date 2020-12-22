@@ -15,7 +15,7 @@ export const JornualEntry = ({id,date,title,body,url}) => {
     }
 
     return (
-        <div className="jornual__entry pointer" onClick={handleEntryClick} >
+        <div className="jornual__entry pointer animate__animated animate__fadeIn animete_faster" onClick={handleEntryClick} >
             
            { 
             url &&

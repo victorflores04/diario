@@ -8,7 +8,7 @@ export const JornualScreen = () => {
 
     const {active} = useSelector(state => state.notes)
     return (
-        <div className="jornual__main-content">
+        <div className="jornual__main-content animate__animated animate__fadeIn animete_faster">
             <SiderBar/>
                 <main>
                     {
